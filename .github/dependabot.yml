@@ -1,7 +1,37 @@
----
 version: 2
 updates:
+  # Define the package-ecosystem and directory for Go modules
   - package-ecosystem: "gomod"
     directory: "/"
     schedule:
-      interval: "daily"
+      interval: "weekly"
+    commit-message:
+      prefix: "deps"
+      include: true
+    open-pull-requests-limit: 10
+    rebase-strategy: "auto"
+    ignore:
+      - dependency-name: "github.com/0xPolygonHermez/zkevm-node"
+        versions: ["0.2.7"]
+
+  # Define the package-ecosystem and directory for Solidity
+  - package-ecosystem: "npm"
+    directory: "/solidity"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "deps"
+      include: true
+    open-pull-requests-limit: 10
+    rebase-strategy: "auto"
+
+  # Define the package-ecosystem and directory for other dependencies
+  - package-ecosystem: "bundler"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    commit-message:
+      prefix: "deps"
+      include: true
+    open-pull-requests-limit: 10
+    rebase-strategy: "auto"
