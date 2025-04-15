@@ -10,6 +10,11 @@ updates:
       include: true
     open-pull-requests-limit: 10
     rebase-strategy: "auto"
+    labels:
+      - "dependencies"
+      - "automated"
+    reviewers:
+      - "team-name"
     ignore:
       - dependency-name: "github.com/0xPolygonHermez/zkevm-node"
         versions: ["0.2.7"]
@@ -24,6 +29,11 @@ updates:
       include: true
     open-pull-requests-limit: 10
     rebase-strategy: "auto"
+    labels:
+      - "dependencies"
+      - "automated"
+    reviewers:
+      - "team-name"
 
   # Define the package-ecosystem and directory for other dependencies
   - package-ecosystem: "bundler"
@@ -35,3 +45,8 @@ updates:
       include: true
     open-pull-requests-limit: 10
     rebase-strategy: "auto"
+    labels:
+      - "dependencies"
+      - "automated"
+    reviewers:
+      - "team-name"
